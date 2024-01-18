@@ -14,6 +14,9 @@ public class Ball : MonoBehaviour
     Rigidbody2D rb;
     public float forceAmount = 1f;
 
+    public bool isPlayer1 = false;
+    public bool isPlayer2 = false;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -24,8 +27,17 @@ public class Ball : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D coll)
     {
-        if (coll.gameObject.CompareTag("Player"))
+
+        if (coll.gameObject.CompareTag("Player1"))
         {
+            isPlayer1 = true;
+            Vector2 awayDirection = (transform.position - coll.transform.position).normalized;
+            rb.AddForce(awayDirection * forceAmount, ForceMode2D.Impulse);
+        }
+
+        if (coll.gameObject.CompareTag("Player2"))
+        {
+            isPlayer2 = true;
             Vector2 awayDirection = (transform.position - coll.transform.position).normalized;
             rb.AddForce(awayDirection * forceAmount, ForceMode2D.Impulse);
         }
@@ -56,9 +68,6 @@ public class Ball : MonoBehaviour
 
     void PosInit()
     {
-        // 플레이어1 = 포지션1;
-        // 플레이어2 = 포지션2;
-
         GameManager.Instance.player[0].position = Player1Pos;
         GameManager.Instance.player[1].position = Player2Pos;
 

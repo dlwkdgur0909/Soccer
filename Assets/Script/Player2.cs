@@ -12,7 +12,6 @@ public class Player2 : MonoBehaviour
 
     bool isRotating = false;
     float rotationDuration = 0.5f;
-    float rotationTimer = 0f;
 
     private Vector2 inputVec = Vector2.zero;
 
