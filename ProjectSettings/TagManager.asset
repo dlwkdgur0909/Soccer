@@ -7,6 +7,9 @@ TagManager:
   - Ground
   - GoalPost1
   - GoalPost2
+  - Ball
+  - Player1
+  - Player2
   layers:
   - Default
   - TransparentFX
