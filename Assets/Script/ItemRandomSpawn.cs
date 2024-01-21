@@ -30,7 +30,7 @@ public class ItemRandomSpawn : MonoBehaviour
 
             Instantiate(prefabToSpawn, randomPosition, Quaternion.identity);
 
-            yield return new WaitForSeconds(15f);
+            yield return new WaitForSeconds(10f);
         }
     }
 }

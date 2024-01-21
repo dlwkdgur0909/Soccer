@@ -282,6 +282,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 779ea4a698169bc4e84ab52dae484fb3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ball: {fileID: 532313296}
+  player1: {fileID: 1370118767}
+  player2: {fileID: 1568551837}
+  goalPost1: {fileID: 1891252031}
+  goalPost2: {fileID: 758996886}
   Goal: {fileID: 1199597394}
   forceAmount: 1
   isPlayer1: 0
@@ -833,8 +838,6 @@ Transform:
   m_Children:
   - {fileID: 1891252034}
   - {fileID: 758996889}
-  - {fileID: 1392660023}
-  - {fileID: 1192062608}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &716799287
@@ -1094,7 +1097,8 @@ Transform:
   m_LocalPosition: {x: 8.4, y: -3.1, z: 0}
   m_LocalScale: {x: 12, y: 12, z: 12}
   m_ConstrainProportionsScale: 1
-  m_Children: []
+  m_Children:
+  - {fileID: 1192062608}
   m_Father: {fileID: 702525346}
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!1 &829414958
@@ -1352,12 +1356,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1192062605}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: 0.10452846, w: 0.9945219}
-  m_LocalPosition: {x: 8.4, y: -1.5, z: 0}
-  m_LocalScale: {x: 2, y: 0.099999994, z: 1}
+  m_LocalRotation: {x: -0.10452846, y: -0.9945219, z: -0, w: 0}
+  m_LocalPosition: {x: -0.012500048, y: 0.13333333, z: 0}
+  m_LocalScale: {x: 0.16666667, y: 0.008333333, z: 0.083333336}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 702525346}
+  m_Father: {fileID: 758996889}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 12}
 --- !u!1 &1199597394
 GameObject:
@@ -1872,11 +1876,11 @@ Transform:
   m_GameObject: {fileID: 1392660020}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0.10452837, w: 0.9945219}
-  m_LocalPosition: {x: -8.4, y: -1.5, z: 0}
-  m_LocalScale: {x: 2, y: 0.1, z: 1}
+  m_LocalPosition: {x: -0.012500048, y: 0.13333333, z: 0}
+  m_LocalScale: {x: 0.16666667, y: 0.008333334, z: 0.083333336}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 702525346}
+  m_Father: {fileID: 1891252034}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -12}
 --- !u!1 &1400393547
 GameObject:
@@ -2477,7 +2481,8 @@ Transform:
   m_LocalPosition: {x: -8.4, y: -3.1, z: 0}
   m_LocalScale: {x: 12, y: 12, z: 12}
   m_ConstrainProportionsScale: 1
-  m_Children: []
+  m_Children:
+  - {fileID: 1392660023}
   m_Father: {fileID: 702525346}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1947660198
@@ -2773,8 +2778,12 @@ MonoBehaviour:
   prefabs:
   - {fileID: 7742786397923177492, guid: 2b2a44a780e60b14589d28f7ac49e962, type: 3}
   - {fileID: 2896249524665442661, guid: 7e4d729de01c19446af2fb80acea3cfb, type: 3}
-  spawnArea_X: 10
-  spawnArea_Y: 5
+  - {fileID: 5066641097301819656, guid: b524b8937bc91d240aa6bd2bdaea8220, type: 3}
+  - {fileID: 440696160680076559, guid: 03c8a6748e9644841b5788a9f4a3753f, type: 3}
+  - {fileID: 4237927109277153568, guid: 222d46eb76b29584b913634bd6b5b57e, type: 3}
+  - {fileID: 8405017611535123529, guid: f27f8bd73ccaac64398ed2d0aa8b6a78, type: 3}
+  spawnArea_X: 9
+  spawnArea_Y: 4
   spawnArea_Z: 1
 --- !u!114 &2062763731
 MonoBehaviour:
