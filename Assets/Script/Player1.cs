@@ -15,6 +15,7 @@ public class Player1 : MonoBehaviour
 
     private Vector2 inputVec = Vector2.zero;
 
+
     void Start()
     {
         rigid = GetComponent<Rigidbody2D>();
@@ -31,7 +32,7 @@ public class Player1 : MonoBehaviour
 
 
         Jump();
-        RotateOnKeyPress();
+        Rorate();
     }
 
     private void FixedUpdate()
@@ -58,7 +59,7 @@ public class Player1 : MonoBehaviour
         }
     }
 
-    void RotateOnKeyPress()
+    void Rorate()
     {
         if (Input.GetKeyDown(KeyCode.S) && !isRotating)
         {

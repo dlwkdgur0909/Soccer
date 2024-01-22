@@ -16,6 +16,7 @@ TagManager:
   - BigPlayer
   - BigGoalPost
   - SmallGoalPost
+  - SpeedUp
   layers:
   - Default
   - TransparentFX

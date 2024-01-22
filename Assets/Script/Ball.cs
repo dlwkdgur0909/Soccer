@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -16,6 +17,7 @@ public class Ball : MonoBehaviour
     public GameObject goalPost1;
     public GameObject goalPost2;
     public GameObject Goal;
+
     Rigidbody2D rb;
     public float forceAmount = 1f;
 
@@ -67,7 +69,6 @@ public class Ball : MonoBehaviour
     //아이템 먹을 때
     void OnTriggerEnter2D(Collider2D coll)
     {
-        //공이 커지는 아이템을 먹었을 때
         if (coll.gameObject.CompareTag("BigBall"))
         {
             BigBall();
@@ -105,8 +106,8 @@ public class Ball : MonoBehaviour
             //플레이어2의 골대가 커짐
             BigGoalPost2();
         }
-        
-        else if(coll.gameObject.CompareTag("BigGoalPost") && isPlayer2 == true)
+
+        else if (coll.gameObject.CompareTag("BigGoalPost") && isPlayer2 == true)
         {
             //플레이어1의 골대가 커짐
             BigGoalPost1();
@@ -114,14 +115,14 @@ public class Ball : MonoBehaviour
 
         if (coll.gameObject.CompareTag("SmallGoalPost") && isPlayer1 == true)
         {
-            //플레이어2의 골대가 작아짐
-            SmallGoalPost2();
+            //플레이어1의 골대가 작아짐
+            SmallGoalPost1();
         }
 
         else if (coll.gameObject.CompareTag("SmallGoalPost") && isPlayer2 == true)
         {
-            //플레이어1의 골대가 작아짐
-            SmallGoalPost1();
+            //플레이어2의 골대가 작아짐
+            SmallGoalPost2();
         }
     }
 
@@ -209,10 +210,12 @@ public class Ball : MonoBehaviour
         IEnumerator BigGoalPost1()
         {
             goalPost1.transform.localScale = new Vector3(20f, 20f, 20f);
+            goalPost1.transform.localPosition = new Vector3(-8.4f, -2.1f, 0f);
 
             yield return new WaitForSeconds(5f);
 
             goalPost1.transform.localScale = new Vector3(12f, 12f, 12f);
+            goalPost1.transform.localPosition = new Vector3(-8.4f, -3.1f, 0f);
         }
     }
 
@@ -221,11 +224,13 @@ public class Ball : MonoBehaviour
         StartCoroutine(BigGoalPost2());
         IEnumerator BigGoalPost2()
         {
-            goalPost2.transform.localScale = new Vector3(20f, 20f, 20f);
+            goalPost2.transform.localScale = new Vector3(12f, 20f, 0f);
+            goalPost2.transform.localPosition = new Vector3(8.4f, -2.1f, 0f);
 
             yield return new WaitForSeconds(5f);
 
             goalPost2.transform.localScale = new Vector3(12f, 12f, 12f);
+            goalPost2.transform.localPosition = new Vector3(8.4f, -3.1f, 0f);
         }
     }
 
@@ -235,10 +240,12 @@ public class Ball : MonoBehaviour
         IEnumerator SmallGoalPost1()
         {
             goalPost1.transform.localScale = new Vector3(8f, 8f, 8f);
+            goalPost1.transform.localPosition = new Vector3(-8.75f, -3.55f, 0f);
 
             yield return new WaitForSeconds(5f);
 
             goalPost1.transform.localScale = new Vector3(12f, 12f, 12f);
+            goalPost1.transform.localPosition = new Vector3(-8.4f, -3.1f, 0f);
         }
     }
 
@@ -248,12 +255,15 @@ public class Ball : MonoBehaviour
         IEnumerator SmallGoalPost2()
         {
             goalPost2.transform.localScale = new Vector3(8f, 8f, 8f);
+            goalPost2.transform.localPosition = new Vector3(8.75f, -3.55f, 0f);
 
             yield return new WaitForSeconds(5f);
 
             goalPost2.transform.localScale = new Vector3(12f, 12f, 12f);
+            goalPost2.transform.localPosition = new Vector3(8.4f, -3.1f, 0f);
         }
     }
+
 
     public IEnumerator ActivateUI()
     {

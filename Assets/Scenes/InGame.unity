@@ -2782,6 +2782,7 @@ MonoBehaviour:
   - {fileID: 440696160680076559, guid: 03c8a6748e9644841b5788a9f4a3753f, type: 3}
   - {fileID: 4237927109277153568, guid: 222d46eb76b29584b913634bd6b5b57e, type: 3}
   - {fileID: 8405017611535123529, guid: f27f8bd73ccaac64398ed2d0aa8b6a78, type: 3}
+  - {fileID: 3279899375025773298, guid: 982b6ff21befcb34b809b464153bdf13, type: 3}
   spawnArea_X: 9
   spawnArea_Y: 4
   spawnArea_Z: 1
