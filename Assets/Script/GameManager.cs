@@ -21,8 +21,9 @@ public class GameManager : MonoBehaviour
                 Destroy(this.gameObject); //둘 이상 존재하면 안되는 객체이니 방금 AWake된 자신을 삭제
         }
     }
-    public Transform[] player;
 
+
+    public Transform player1, player2;
     public Text P1Score;
     public Text P2Score;
 

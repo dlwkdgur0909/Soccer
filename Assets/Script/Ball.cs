@@ -276,8 +276,8 @@ public class Ball : MonoBehaviour
 
     void PosInit()
     {
-        GameManager.Instance.player[0].position = Player1Pos;
-        GameManager.Instance.player[1].position = Player2Pos;
+        GameManager.Instance.player1.position = Player1Pos;
+        GameManager.Instance.player2.position = Player2Pos;
 
         transform.position = BallPos;
         rb.velocity = Vector2.zero;

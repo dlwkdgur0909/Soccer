@@ -2798,9 +2798,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68d145a45088a794d89f681f10e58b7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player:
-  - {fileID: 1370118772}
-  - {fileID: 1568551842}
+  player1: {fileID: 1370118772}
+  player2: {fileID: 1568551842}
   P1Score: {fileID: 627809830}
   P2Score: {fileID: 1476472532}
   Player1Score: 0
