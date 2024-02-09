@@ -8,6 +8,11 @@ public class Player1 : MonoBehaviour
     public float jumpPower = 5f;
     public int jumpCount = 0;
     public float moveSpeed = 5f;
+    public float chargeTime = 0f;
+    public float maxChargeTime = 2f;
+    public float curChargeTime = 0f;
+    [SerializeField] private bool isCharge = false;
+
 
 
     bool isRotating = false;
@@ -32,7 +37,8 @@ public class Player1 : MonoBehaviour
 
 
         Jump();
-        Rorate();
+        //Rorate();
+        ShootCharging();
     }
 
     private void FixedUpdate()
@@ -64,7 +70,7 @@ public class Player1 : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.S) && !isRotating)
         {
             isRotating = true;
-            StartCoroutine(RotatePlayer());
+
         }
     }
 
@@ -83,5 +89,29 @@ public class Player1 : MonoBehaviour
         }
 
         isRotating = false;
+    }
+
+    void ShootCharging()
+    {
+        if (Input.GetKey(KeyCode.S))
+        {
+            isCharge = true;
+            curChargeTime += Time.deltaTime;
+            moveSpeed = 3f;
+            curChargeTime = Mathf.Min(curChargeTime, maxChargeTime); //최대 차징 시간을 넘지 않도록 제한
+        }
+
+        else if (isCharge)
+        {
+            StartCoroutine(RotatePlayer());
+            isCharge = false;
+            curChargeTime = 0f;
+        } 
+
+        if(Input.GetKeyUp(KeyCode.S))
+        {
+            isCharge = false;
+            moveSpeed = 10f;
+        }
     }
 }

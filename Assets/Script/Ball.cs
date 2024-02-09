@@ -224,7 +224,7 @@ public class Ball : MonoBehaviour
         StartCoroutine(BigGoalPost2());
         IEnumerator BigGoalPost2()
         {
-            goalPost2.transform.localScale = new Vector3(12f, 20f, 0f);
+            goalPost2.transform.localScale = new Vector3(12f, 20f, 20f);
             goalPost2.transform.localPosition = new Vector3(8.4f, -2.1f, 0f);
 
             yield return new WaitForSeconds(5f);
